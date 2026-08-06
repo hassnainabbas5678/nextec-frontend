@@ -151,7 +151,8 @@ img{height:auto}.media-frame img,.portfolio-preview img,.detail-image,.team-card
   .site-header nav .mobile-menu-links a svg{color:var(--cyan);font-size:1rem;transition:transform .28s var(--ease)}
   .site-header nav .mobile-menu-links a.active{padding-inline:10px;background:linear-gradient(90deg,rgba(96,221,255,.1),transparent);color:var(--cyan)}
   .site-header nav .mobile-menu-links a.active svg{transform:translate(2px,-2px)}
-  .mobile-menu-cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;margin-top:24px;border-radius:999px;background:linear-gradient(100deg,var(--electric),var(--cyan));color:#03101d!important;font-size:.7rem!important;font-weight:900!important;letter-spacing:.09em;text-transform:uppercase;opacity:0;transform:translateY(14px);transition:opacity .4s .36s var(--ease),transform .45s .36s var(--ease),box-shadow .3s ease!important}
+  .mobile-menu-cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;margin-top:24px;border-radius:999px;background:linear-gradient(100deg,var(--electric),var(--cyan));color:#fff!important;font-size:.7rem!important;font-weight:900!important;letter-spacing:.09em;text-transform:uppercase;opacity:0;transform:translateY(14px);transition:opacity .4s .36s var(--ease),transform .45s .36s var(--ease),box-shadow .3s ease!important}
+  .mobile-menu-cta svg{color:#fff!important}
   .site-header nav.open .mobile-menu-cta{opacity:1;transform:none}
   .mobile-menu-cta:after{display:none!important}.mobile-menu-cta:active{transform:scale(.98)!important}
   .mobile-menu-note{display:block;margin:18px 0 0;color:#9cb1ca;font:.58rem/1.6 'DM Mono',monospace;letter-spacing:.07em;text-align:center;opacity:0;transition:opacity .35s .42s ease}.site-header nav.open .mobile-menu-note{opacity:1}
