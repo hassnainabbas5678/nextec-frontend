@@ -12,6 +12,12 @@ import { navLinks } from '../config/site.js';
 import { publicApi } from '../services/api.js';
 import { useSiteContent } from '../hooks/useSiteContent.js';
 
+const socialLinks = {
+  facebook: 'https://www.facebook.com/profile.php?id=61555898725326',
+  linkedin: 'https://www.linkedin.com/company/nextecservices',
+  instagram: 'https://www.instagram.com/nextec.services'
+};
+
 export default function PublicLayout() {
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -153,13 +159,13 @@ export default function PublicLayout() {
             <Logo />
             <p>Independent product thinking, striking interfaces, and reliable software systems for teams ready to grow.</p>
             <div className="socials">
-              <a href={settings.socials.facebook} aria-label="Facebook" rel="noreferrer">
+              <a href={socialLinks.facebook} aria-label="Visit Nextec on Facebook" target="_blank" rel="noreferrer">
                 <FiFacebook />
               </a>
-              <a href={settings.socials.linkedin} aria-label="LinkedIn" rel="noreferrer">
+              <a href={socialLinks.linkedin} aria-label="Visit Nextec on LinkedIn" target="_blank" rel="noreferrer">
                 <FiLinkedin />
               </a>
-              <a href={settings.socials.instagram} aria-label="Instagram" rel="noreferrer">
+              <a href={socialLinks.instagram} aria-label="Visit Nextec on Instagram" target="_blank" rel="noreferrer">
                 <FiInstagram />
               </a>
             </div>

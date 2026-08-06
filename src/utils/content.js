@@ -61,24 +61,36 @@ export const services = [
     description: 'We improve search visibility through site audits, structured data, keyword mapping, content briefs, technical fixes, and local SEO foundations.',
     deliverables: ['SEO audits', 'Keyword strategy', 'On-page SEO', 'Structured data', 'Local SEO']
   },
-  {
-    title: 'Virtual Assistant',
-    slug: 'virtual-assistant',
-    category: 'Operations',
-    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
-    excerpt: 'Reliable remote operations support for founders, agencies, and scaling teams.',
-    description: 'We help businesses delegate admin, research, CRM, inbox, lead generation, and coordination tasks to trained virtual assistants.',
-    deliverables: ['Admin support', 'CRM updates', 'Lead research', 'Inbox management', 'Operations coordination']
-  },
-  {
-    title: 'Language Translation',
-    slug: 'language-translation',
-    category: 'Operations',
-    image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80',
-    excerpt: 'Clear multilingual communication for websites, documents, campaigns, and business operations.',
-    description: 'Nextec supports accurate, context-aware translation for business content that needs to stay professional across markets.',
-    deliverables: ['Website translation', 'Document translation', 'Marketing localization', 'Review workflows']
-  },
+{
+  title: 'Youtube Automation',
+  slug: 'Youtube Automation',
+  category: 'Marketing',
+  image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
+  excerpt: 'End-to-end YouTube automation services that help you build, grow, and monetize a professional channel.',
+  description: 'Nextec provides complete YouTube automation solutions including niche research, scriptwriting, voiceovers, video editing, thumbnail design, SEO optimization, and channel management to help creators and businesses scale effortlessly.',
+  deliverables: [
+    'Channel setup & branding',
+    'Content research & scripting',
+    'Professional video editing',
+    'Custom thumbnail design',
+    'YouTube SEO & publishing'
+  ]
+},
+{
+  title: '2D Animation',
+  slug: '2D Animation',
+  category: 'Creative',
+  image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80',
+  excerpt: 'High-quality 2D animated videos that simplify ideas and elevate your brand.',
+  description: 'We create engaging 2D animations for businesses, startups, educational platforms, and marketing campaigns. From concept development and storyboarding to character animation and motion graphics, we deliver visually compelling content that captures attention.',
+  deliverables: [
+    'Explainer videos',
+    'Motion graphics',
+    'Character animation',
+    'Storyboard & script',
+    'Logo animation & intros'
+  ]
+},
   {
     title: 'Video Production',
     slug: 'video-production',
