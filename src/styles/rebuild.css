@@ -271,3 +271,115 @@ img{height:auto}.media-frame img,.portfolio-preview img,.detail-image,.team-card
   .contact-lines span{grid-template-columns:36px minmax(0,1fr)}
   .contact-lines svg{width:36px;height:36px;padding:9px}
 }
+
+/* Route audit layer: constrain grid children before their content can expand a
+   page, then use distinct tablet and phone compositions. */
+.route-view,.route-view > *,.container,.landing-grid,.faq-layout,.detail-grid,.about-grid,.contact-grid,.cta-grid,.portfolio-tools{min-width:0}
+.service-grid > *,.portfolio-grid > *,.values-grid > *,.benefit-grid > *,.packages-grid > *,.package-proof > *,.proof-grid > *,.stats-grid > *,.footer-grid > *,.detail-grid > *,.about-grid > *,.contact-grid > *,.cta-grid > *,.faq-layout > *{min-width:0}
+.portfolio-preview,.portfolio-preview img,.detail-image,.team-card img,.map-frame{max-width:100%}
+.route-view svg,.route-view iframe{max-width:100%}
+.portfolio-preview{padding:0}
+.card-body,.detail-panel,.package-card,.proof-card,.value-card,.service-list,.contact-form{min-width:0}
+.portfolio-tools label,.filter-row{min-width:0}
+.portfolio-tools input{min-width:0}
+.not-found{min-height:max(72svh,560px);padding-inline:0}
+.not-found .container{display:grid;justify-items:center;text-align:center}
+.not-found h1{max-width:12ch;margin-bottom:16px}
+.not-found p{max-width:38ch}
+
+@media (min-width:981px) and (max-width:1100px){
+  .container,.page-hero .container.narrow{width:min(100% - 56px,980px)}
+  .service-grid,.portfolio-grid,.values-grid,.benefit-grid,.packages-grid,.package-proof,.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-grid{grid-template-columns:1.25fr 1fr 1fr}
+  .footer-grid > :last-child{grid-column:1/-1}
+  .portfolio-tools{grid-template-columns:minmax(0,340px) minmax(0,1fr)}
+}
+
+@media (min-width:681px) and (max-width:980px){
+  .container,.page-hero .container.narrow{width:min(100% - 48px,860px)}
+  .page-hero{min-height:clamp(470px,58svh,620px)}
+  .page-hero h1{max-width:12ch}
+  .landing-stage{padding-block:124px 72px}
+  .landing-copy h1{max-width:13ch}
+  .landing-sculpture{min-height:390px}
+  .service-grid,.portfolio-grid,.values-grid,.benefit-grid,.packages-grid,.package-proof,.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .portfolio-tools{grid-template-columns:minmax(0,360px) minmax(0,1fr)}
+  .faq-layout,.detail-grid,.about-grid,.contact-grid,.cta-grid{grid-template-columns:1fr}
+  .detail-image{min-height:0;aspect-ratio:1.6}
+  .map-frame{height:clamp(360px,52vw,480px)}
+}
+
+@media (max-width:680px){
+  html,body,#root{max-width:100%;overflow-x:hidden;overflow-x:clip}
+  main,.route-view{overflow-x:clip}
+  .section{padding-block:clamp(54px,15vw,76px)}
+  .container,.page-hero .container.narrow{width:min(calc(100% - 32px),640px)}
+  .page-hero{min-height:0;padding:112px 0 54px;overflow:clip}
+  .page-hero .container{padding-bottom:2px}
+  .page-hero h1{max-width:100%;font-size:clamp(2.3rem,10vw,3.45rem)!important;line-height:1.08!important;overflow-wrap:anywhere}
+  .page-hero p{max-width:36ch;margin-top:12px;font-size:.94rem}
+  .page-hero-meta{margin-top:24px}
+  .page-hero:before{right:-42px;bottom:-50px;width:230px;box-shadow:0 0 0 28px rgba(22,139,255,.06),0 0 0 64px rgba(22,139,255,.025)}
+  .page-hero-orbit{right:12%;bottom:16%;width:9px;box-shadow:0 0 0 10px rgba(96,221,255,.13),0 0 0 24px rgba(22,139,255,.07)}
+  .landing-stage{min-height:0;padding:96px 0 42px;overflow:clip}
+  .landing-copy h1{max-width:11ch;font-size:clamp(2.15rem,10vw,3.35rem)!important;line-height:1.04!important}
+  .landing-copy > p{max-width:34ch}
+  .landing-sculpture{width:100%;min-height:260px;overflow:clip}
+  .sculpture-axis i:nth-child(2){width:min(66vw,225px)}
+  .sculpture-readout{max-width:100%}
+  .sculpture-readout b{max-width:28ch;overflow-wrap:anywhere}
+  .sculpture-pulse{right:0;max-width:45%;font-size:.46rem}
+  .signal-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .signal-stats-grid div{min-width:0}
+  .service-grid,.portfolio-grid,.values-grid,.benefit-grid,.packages-grid,.package-proof,.proof-grid,.stats-grid,.footer-grid{grid-template-columns:minmax(0,1fr)}
+  .service-card,.portfolio-card,.package-card,.proof-card,.value-card{width:100%;min-width:0}
+  .service-card-inner{min-height:0;padding:20px}
+  .service-card .card-body{padding-top:24px}
+  .portfolio-card .card-body{padding:20px}
+  .portfolio-card .card-body h3,.package-card h2,.detail-panel h2{overflow-wrap:anywhere}
+  .portfolio-preview{aspect-ratio:1.35}
+  .portfolio-tools{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-bottom:26px}
+  .portfolio-tools label{width:100%}
+  .portfolio-tools input{width:100%;min-height:50px}
+  .filter-row{width:100%;margin:0;padding:0 0 4px;gap:8px;overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+  .filter-row button{min-height:46px;flex:0 0 auto}
+  .detail-grid,.about-grid,.contact-grid,.cta-grid,.faq-layout{grid-template-columns:minmax(0,1fr);gap:28px}
+  .detail-image{width:100%;min-height:0;aspect-ratio:1.2;object-fit:cover}
+  .detail-panel,.contact-form{padding:20px 16px}
+  .detail-panel .btn,.contact-form .btn{width:100%}
+  .mini-values{grid-template-columns:minmax(0,1fr)}
+  .timeline-item{grid-template-columns:minmax(0,1fr)}
+  .package-card{padding:22px 18px}
+  .package-topline{gap:10px;flex-wrap:wrap}
+  .package-price{flex-wrap:wrap;gap:4px 7px}
+  .package-price strong{font-size:clamp(2.8rem,15vw,4rem)}
+  .package-card li{align-items:flex-start;overflow-wrap:anywhere}
+  .faq-stage{overflow:clip}
+  .faq-list summary{min-height:0;padding:19px 46px 19px 0;overflow-wrap:anywhere}
+  .faq-list p{padding-right:0;overflow-wrap:anywhere}
+  .map-frame{height:clamp(280px,82vw,390px)}
+  .team-card img{height:auto;aspect-ratio:1.25;object-fit:cover}
+  .not-found{min-height:calc(100svh - 72px);padding-block:120px 60px}
+  .not-found h1{font-size:clamp(2.6rem,13vw,4rem)!important}
+  .not-found .btn{width:min(100%,280px)}
+  .footer-grid{gap:30px}
+  .footer-brand,.footer-grid > div{min-width:0}
+  .footer-contact p,.site-footer li{overflow-wrap:anywhere}
+  .newsletter{grid-template-columns:minmax(0,1fr)}
+  .newsletter .btn{width:100%}
+  .modal-backdrop{padding:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom));align-items:center}
+  .modal{width:100%;max-height:calc(100dvh - 24px);padding:16px;overflow:auto}
+  .modal .icon-btn{right:12px;top:12px;width:44px;height:44px}
+  .modal img{max-height:38dvh;margin-top:42px;object-fit:cover}
+  .modal h2{font-size:clamp(1.8rem,9vw,2.5rem);overflow-wrap:anywhere}
+  .admin-login form{padding:clamp(20px,7vw,30px)}
+  .admin-login h1{font-size:clamp(2rem,10vw,3rem);overflow-wrap:anywhere}
+  .admin-login .btn{width:100%}
+  .route-view .service-card,.route-view .portfolio-card,.route-view .package-card{will-change:auto}
+}
+
+@media (prefers-reduced-motion:reduce),(max-width:680px){
+  .sculpture-axis i:nth-child(2),.technology-field:before{animation:none}
+  .route-view .service-card,.route-view .portfolio-card,.route-view .package-card{transition-duration:.2s}
+}
