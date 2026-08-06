@@ -87,3 +87,187 @@ img{height:auto}.media-frame img,.portfolio-preview img,.detail-image,.team-card
 /* Decorative lighting must not contribute to document width at narrow viewports. */
 .technology-field{width:100%;max-width:100%;overflow:clip;contain:paint}
 @media(max-width:980px){.technology-field i,.technology-field b{display:none}.intro-reveal{overflow:hidden}.intro-reveal>div{max-width:100%;font-size:clamp(2.5rem,8vw,5rem);white-space:nowrap}}
+
+/* Responsive refinement layer — desktop composition stays untouched; these rules
+   progressively tailor density, touch targets, and visual rhythm below laptop. */
+.mobile-menu-intro,.mobile-menu-cta,.mobile-menu-note{display:none}.mobile-menu-links{display:contents}
+@media (min-width:681px){.mobile-menu-links small,.mobile-menu-links svg{display:none}}
+
+@media (max-width:980px){
+  .container{width:min(100% - 40px,760px)}
+  .section{padding-block:clamp(68px,10vw,96px)}
+  .section-header{margin-bottom:clamp(30px,5vw,44px)}
+  .landing-grid{gap:clamp(28px,6vw,52px)}
+  .landing-copy{max-width:680px}
+  .landing-copy h1{max-width:14ch}
+  .hero-actions .btn{min-width:190px}
+  .signal-stats-grid div{padding:24px 20px}
+  .page-hero .container.narrow{width:min(100% - 40px,760px)}
+  .page-hero h1{max-width:13ch}
+  .detail-image{aspect-ratio:1.35;min-height:0}
+  .detail-panel,.contact-form{padding:clamp(24px,4vw,32px)}
+  .faq-layout{gap:32px}
+  .footer-grid{gap:32px 24px}
+}
+
+@media (max-width:680px){
+  :root{--radius:16px}
+  html{scroll-padding-top:84px}
+  body{min-width:320px}
+  .container,.page-hero .container.narrow{width:calc(100% - 32px)}
+  .section{padding-block:clamp(58px,16vw,78px)}
+  .section-header{margin-bottom:30px}
+  .section-header h2{max-width:13ch}
+  .eyebrow{gap:8px;margin-bottom:12px;font-size:.56rem;letter-spacing:.12em}
+  .eyebrow:before{width:20px}
+  p{font-size:.94rem;line-height:1.68}
+  h1{font-size:clamp(2rem,9.4vw,3.25rem)!important;letter-spacing:-.06em!important}
+  h2{font-size:clamp(1.9rem,8.4vw,2.75rem)!important;letter-spacing:-.052em!important}
+  h3{font-size:clamp(1.35rem,6.5vw,1.65rem)!important}
+  .btn{min-height:50px;padding-inline:18px;font-size:.68rem}
+  .btn:active,.icon-btn:active,.filter-row button:active,.nav-trigger:active{transform:scale(.97)}
+
+  /* A separate mobile navigation surface: no miniature desktop menu. */
+  .site-header{top:10px;right:10px;left:10px;width:auto;z-index:80;transform:none}
+  .site-header.hide{transform:none}
+  .site-header.menu-open{transform:none}
+  .navbar-shell{min-height:58px;grid-template-columns:1fr auto;padding:0 4px;border-radius:17px}
+  .brand{padding:9px 12px}
+  .logo-symbol{font-size:1.18rem}
+  .nav-actions{display:flex;align-items:center;gap:4px}
+  .nav-project{display:none}
+  .nav-trigger{position:relative;z-index:2;width:48px;min-height:48px;justify-content:center;padding:0;border:0;background:transparent;font-size:1.25rem}
+  .site-header nav{position:fixed;inset:-10px;display:flex;flex-direction:column;min-height:100dvh;padding:clamp(92px,17vh,120px) 22px max(24px,env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;background:linear-gradient(145deg,rgba(4,13,31,.97),rgba(2,7,18,.985));backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%);clip-path:circle(0% at calc(100% - 35px) 39px);transform:none;transition:clip-path .62s var(--ease),opacity .28s ease}
+  .site-header nav.open{clip-path:circle(150% at calc(100% - 35px) 39px);transform:none}
+  .mobile-menu-intro{display:grid;gap:12px;margin-bottom:clamp(22px,6vh,42px)}
+  .mobile-menu-intro span{color:var(--cyan);font:.56rem 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase}
+  .mobile-menu-intro b{font:500 clamp(2.2rem,11vw,3.8rem)/.91 'Playfair Display',serif;letter-spacing:-.07em}
+  .mobile-menu-links{display:grid;gap:0;border-top:1px solid var(--soft-line)}
+  .site-header nav .mobile-menu-links a{display:grid;grid-template-columns:30px 1fr auto;align-items:center;min-height:clamp(54px,9vh,68px);padding:0;border:0;border-bottom:1px solid var(--soft-line);background:transparent;color:var(--paper);font:500 clamp(1.35rem,6vw,1.8rem)/1 'Playfair Display',serif;opacity:0;transform:translateY(14px);transition:color .25s ease,background .25s ease,opacity .4s var(--ease),transform .45s var(--ease)}
+  .site-header nav.open .mobile-menu-links a{opacity:1;transform:none}
+  .site-header nav.open .mobile-menu-links a:nth-child(1){transition-delay:.10s}.site-header nav.open .mobile-menu-links a:nth-child(2){transition-delay:.15s}.site-header nav.open .mobile-menu-links a:nth-child(3){transition-delay:.20s}.site-header nav.open .mobile-menu-links a:nth-child(4){transition-delay:.25s}.site-header nav.open .mobile-menu-links a:nth-child(5){transition-delay:.30s}.site-header nav.open .mobile-menu-links a:nth-child(6){transition-delay:.35s}
+  .site-header nav .mobile-menu-links a:after{display:none}
+  .site-header nav .mobile-menu-links a small{color:var(--cyan);font:.54rem 'DM Mono',monospace;letter-spacing:.08em}
+  .site-header nav .mobile-menu-links a svg{color:var(--cyan);font-size:1rem;transition:transform .28s var(--ease)}
+  .site-header nav .mobile-menu-links a.active{padding-inline:10px;background:linear-gradient(90deg,rgba(96,221,255,.1),transparent);color:var(--cyan)}
+  .site-header nav .mobile-menu-links a.active svg{transform:translate(2px,-2px)}
+  .mobile-menu-cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;margin-top:24px;border-radius:999px;background:linear-gradient(100deg,var(--electric),var(--cyan));color:#03101d!important;font-size:.7rem!important;font-weight:900!important;letter-spacing:.09em;text-transform:uppercase;opacity:0;transform:translateY(14px);transition:opacity .4s .36s var(--ease),transform .45s .36s var(--ease),box-shadow .3s ease!important}
+  .site-header nav.open .mobile-menu-cta{opacity:1;transform:none}
+  .mobile-menu-cta:after{display:none!important}.mobile-menu-cta:active{transform:scale(.98)!important}
+  .mobile-menu-note{display:block;margin:18px 0 0;color:#9cb1ca;font:.58rem/1.6 'DM Mono',monospace;letter-spacing:.07em;text-align:center;opacity:0;transition:opacity .35s .42s ease}.site-header nav.open .mobile-menu-note{opacity:1}
+
+  .landing-stage{min-height:auto;padding:100px 0 42px}
+  .landing-grid{gap:14px}
+  .landing-copy h1{max-width:12ch;margin-bottom:14px;font-size:clamp(2.2rem,10.8vw,3.5rem)!important;line-height:1.01!important}
+  .landing-copy>p{max-width:35ch;font-size:.94rem}
+  .landing-copy .hero-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:22px}
+  .landing-copy .hero-actions .btn{width:100%;min-width:0}
+  .landing-copy .hero-features{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-top:22px}
+  .hero-features span{font-size:.53rem;letter-spacing:.04em}
+  .landing-sculpture{min-height:285px;margin-top:2px}
+  .sculpture-mark{font-size:clamp(3.8rem,20vw,5rem)}
+  .sculpture-readout strong{font-size:clamp(3rem,15vw,4rem)}
+  .sculpture-readout b{max-width:26ch;line-height:1.5}
+  .signal-stats-grid{grid-template-columns:1fr 1fr;gap:0}
+  .signal-stats-grid div{min-height:110px;padding:19px 14px;border-bottom:1px solid var(--soft-line)}
+  .signal-stats-grid div:nth-child(2n){border-right:0}.signal-stats-grid div:nth-last-child(-n+2){border-bottom:0}
+  .signal-stats-grid strong{font-size:clamp(2.1rem,11vw,3rem)}
+  .signal-stats-grid span{font-size:.68rem}
+  .service-grid,.portfolio-grid,.values-grid,.benefit-grid,.packages-grid,.package-proof,.proof-grid,.stats-grid,.footer-grid{grid-template-columns:1fr}
+  .service-grid,.portfolio-grid,.packages-grid,.proof-grid{gap:14px}
+  .service-card-inner{min-height:228px;padding:19px}
+  .service-card .card-body{padding-top:26px}
+  .portfolio-card .card-body{padding:20px}
+  .portfolio-preview{aspect-ratio:1.38}
+  .portfolio-preview:after{display:none}
+  .live-project-link{min-height:48px;margin-top:18px!important}
+  .page-hero{min-height:440px;padding:104px 0 48px}
+  .page-hero h1{max-width:11ch;margin-bottom:12px}
+  .page-hero p{margin-top:14px}
+  .page-hero:before{width:280px;right:-55px;bottom:-68px}
+  .detail-panel,.contact-form{padding:22px 18px}
+  .detail-image{aspect-ratio:1.2}
+  .contact-form{gap:16px}.contact-form .btn{width:100%}
+  input,textarea,select{min-height:50px;padding:13px 14px;font-size:16px}textarea{min-height:150px}
+  .filter-row{flex-wrap:nowrap;overflow-x:auto;margin-inline:-16px;padding:0 16px 6px;scroll-snap-type:x proximity}.filter-row button{flex:none;min-height:44px;scroll-snap-align:start}
+  .portfolio-tools{gap:16px}.portfolio-tools input{min-height:50px}
+  .modal-backdrop{align-items:end;padding:12px}.modal{max-height:92dvh;overflow:auto;padding:14px}.modal h2{font-size:2rem}.modal img{max-height:42dvh}
+  .mini-values{grid-template-columns:1fr}.service-list{padding:20px}.timeline-item{padding-block:20px}.package-card{padding:22px}.package-price strong{font-size:clamp(3rem,16vw,4rem)}
+  .footer-grid{gap:28px}.site-footer{padding-top:54px}.newsletter{grid-template-columns:1fr}.newsletter .btn{width:100%}.copyright{margin-top:36px;padding:18px 16px}
+  .back-top{right:12px;bottom:12px;width:48px;height:48px}
+}
+
+@media (max-width:374px){
+  .container,.page-hero .container.narrow{width:calc(100% - 28px)}
+  .landing-stage{padding-top:92px}.landing-copy h1{font-size:clamp(2rem,10.3vw,2.7rem)!important}
+  .landing-copy .hero-features{grid-template-columns:1fr}.landing-sculpture{min-height:258px}
+  .sculpture-readout b{font-size:.42rem}.sculpture-pulse{font-size:.45rem}
+  .signal-stats-grid div{padding-inline:12px}.mobile-menu-intro b{font-size:2.15rem}
+}
+
+@media (min-width:681px) and (max-width:980px){
+  .landing-copy h1{font-size:clamp(3rem,8vw,4.7rem)!important}
+  .landing-sculpture{min-height:410px}
+}
+
+@media (hover:none){
+  .btn:hover,.service-card:hover,.portfolio-card:hover,.package-card:hover,.proof-card:hover,.value-card:hover{transform:none}
+  .portfolio-preview:after{display:none}
+}
+
+/* Compact workspace and safe-area refinements. These rules deliberately begin
+   below the approved desktop range so the desktop composition is unaffected. */
+@media (max-width:980px){
+  .admin-shell aside{
+    position:sticky;
+    z-index:35;
+    top:0;
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr) auto;
+    align-items:center;
+    gap:14px;
+    padding:max(12px,env(safe-area-inset-top)) 16px 12px;
+    border-right:0;
+    border-bottom:1px solid var(--soft-line);
+  }
+  .admin-brand{padding:0 10px 0 0;border:0;white-space:nowrap}
+  .admin-shell nav{display:flex;min-width:0;gap:6px;overflow-x:auto;overflow-y:hidden;padding:2px;scrollbar-width:none;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+  .admin-shell nav::-webkit-scrollbar{display:none}
+  .admin-shell nav a{flex:0 0 auto;min-height:44px;padding-inline:13px;white-space:nowrap}
+  .admin-shell aside .btn{margin:0;min-height:44px;white-space:nowrap}
+  .admin-page{width:100%;min-width:0}
+  .admin-table{max-width:100%;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+}
+
+@media (max-width:680px){
+  .admin-shell aside{grid-template-columns:minmax(0,1fr) auto;gap:8px;padding-inline:12px}
+  .admin-brand span{display:none}
+  .admin-shell nav{grid-column:1/-1;grid-row:2;padding-inline:0}
+  .admin-shell aside .btn{grid-column:2;grid-row:1;width:44px;min-width:44px;padding:0;font-size:0}
+  .admin-shell aside .btn svg{margin:0;font-size:1rem}
+  .admin-shell nav a{min-height:46px;padding-inline:14px}
+  .admin-shell nav a svg{font-size:1rem}
+  .admin-filters,.admin-form{padding:18px 14px}
+  .admin-form-title{gap:12px;align-items:flex-start}
+  .admin-form-title h2{max-width:calc(100% - 48px)}
+  .form-actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .form-actions .btn{width:100%}
+  .admin-table{margin-inline:-2px;padding:4px}
+  table{min-width:680px}
+  th,td{padding:12px 10px}
+  .media-preview{min-width:0;flex-direction:column}
+  .media-preview img{width:100%;height:auto;aspect-ratio:1.6;object-fit:cover}
+  .map-frame{height:min(56svh,420px)}
+  .team-card{padding-inline:18px}
+  .team-card img{width:calc(100% + 36px);height:auto;aspect-ratio:1.25;margin-inline:-18px;object-fit:cover}
+  .site-footer{padding-bottom:max(0px,env(safe-area-inset-bottom))}
+  .back-top{bottom:max(12px,calc(12px + env(safe-area-inset-bottom)))}
+}
+
+@media (max-width:374px){
+  .admin-page{padding-inline:12px}
+  .admin-toolbar .btn{width:100%}
+  .package-topline{gap:10px;flex-wrap:wrap}
+  .contact-lines span{grid-template-columns:36px minmax(0,1fr)}
+  .contact-lines svg{width:36px;height:36px;padding:9px}
+}

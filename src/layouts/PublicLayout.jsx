@@ -1,6 +1,7 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import { gsap } from 'gsap';
 import { FiArrowUpRight, FiFacebook, FiInstagram, FiLinkedin, FiMenu, FiX } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 
@@ -18,6 +19,7 @@ export default function PublicLayout() {
   const [email, setEmail] = useState('');
   const [mounted, setMounted] = useState(false);
   const [navigating, setNavigating] = useState(false);
+  const navigationRef = useRef(null);
   const location = useLocation();
   const { services, portfolio, settings } = useSiteContent();
 
@@ -52,11 +54,31 @@ export default function PublicLayout() {
   useEffect(() => {
     const closeOnEscape = (event) => { if (event.key === 'Escape') setOpen(false); };
     window.addEventListener('keydown', closeOnEscape);
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.classList.toggle('menu-is-open', open);
     document.body.style.overflow = open ? 'hidden' : '';
+    document.body.style.paddingRight = open && scrollbarWidth ? `${scrollbarWidth}px` : '';
     return () => {
       window.removeEventListener('keydown', closeOnEscape);
+      document.body.classList.remove('menu-is-open');
       document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
     };
+  }, [open]);
+
+  useEffect(() => {
+    const navigation = navigationRef.current;
+    if (!navigation || !window.matchMedia('(max-width: 680px)').matches) return undefined;
+
+    const menuItems = navigation.querySelectorAll('.mobile-menu-links a, .mobile-menu-cta, .mobile-menu-note');
+    gsap.killTweensOf(menuItems);
+    if (!open) return undefined;
+
+    const animation = gsap.fromTo(menuItems,
+      { autoAlpha: 0, y: 18 },
+      { autoAlpha: 1, y: 0, duration: 0.46, stagger: 0.055, delay: 0.18, ease: 'power3.out', clearProps: 'opacity,visibility,transform' }
+    );
+    return () => animation.kill();
   }, [open]);
 
   const subscribe = async (event) => {
@@ -78,12 +100,24 @@ export default function PublicLayout() {
           <NavLink to="/" className="brand" onClick={() => beginNavigation('/')}>
             <Logo />
           </NavLink>
-          <nav id="primary-navigation" className={open ? 'open' : ''} aria-label="Primary navigation">
-            {navLinks.map((item) => (
-              <NavLink key={item.href} to={item.href} end={item.href === '/'} onClick={() => beginNavigation(item.href)}>
-                {item.label}
-              </NavLink>
-            ))}
+          <nav ref={navigationRef} id="primary-navigation" className={open ? 'open' : ''} aria-label="Primary navigation">
+            <div className="mobile-menu-intro" aria-hidden="true">
+              <span>Navigation / 01</span>
+              <b>Move with<br />intention.</b>
+            </div>
+            <div className="mobile-menu-links">
+              {navLinks.map((item, index) => (
+                <NavLink key={item.href} to={item.href} end={item.href === '/'} onClick={() => beginNavigation(item.href)}>
+                  <small>{String(index + 1).padStart(2, '0')}</small>
+                  <span>{item.label}</span>
+                  <FiArrowUpRight aria-hidden="true" />
+                </NavLink>
+              ))}
+            </div>
+            <NavLink className="mobile-menu-cta" to="/contact" onClick={() => beginNavigation('/contact')}>
+              Start a project <FiArrowUpRight aria-hidden="true" />
+            </NavLink>
+            <p className="mobile-menu-note">Independent systems for companies ready to grow.</p>
           </nav>
           <div className="nav-actions">
             <NavLink to="/contact" className="nav-project" onClick={() => beginNavigation('/contact')}>Start a project <FiArrowUpRight /></NavLink>
