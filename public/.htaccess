@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Let deployed assets, files, directories, and API requests resolve normally.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^api(?:/|$) - [L]
+
+  # Vite/React Router SPA fallback for direct visits and browser refreshes.
+  RewriteRule ^ index.html [L]
+</IfModule>
