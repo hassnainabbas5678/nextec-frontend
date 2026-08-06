@@ -21,7 +21,7 @@ const landingHero = {
 export default function Home() {
   const { services, portfolio, testimonials, faqs } = useSiteContent();
   const stats = [
-    { value: '80+', label: 'Completed projects' },
+    { value: '300+', label: 'Completed projects' },
     { value: '12+', label: 'Core services' },
     { value: '2', label: 'Global offices' },
     { value: '95+', label: 'Performance target' }

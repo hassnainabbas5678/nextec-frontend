@@ -4,13 +4,37 @@ import PageHero from '../components/common/PageHero.jsx';
 import PortfolioCard from '../components/cards/PortfolioCard.jsx';
 import { useSiteContent } from '../hooks/useSiteContent.js';
 
+const categories = [
+  'All',
+  'Logo Designs',
+  'Website Development',
+  'Social Media Creatives',
+  'Campaign Results',
+  'SEO Results',
+  'App Development',
+  'Youtube Automation Performance'
+];
+
+const categoryAliases = {
+  'Logo Designs': ['logo designs', 'branding', 'brand identity'],
+  'Website Development': ['website development', 'website', 'websites', 'web design'],
+  'Social Media Creatives': ['social media creatives', 'social media', 'social'],
+  'Campaign Results': ['campaign results', 'campaign', 'marketing campaign'],
+  'SEO Results': ['seo results', 'seo', 'search engine optimization'],
+  'App Development': ['app development', 'application', 'applications', 'mobile app'],
+  'Youtube Automation Performance': ['youtube automation performance', 'youtube automation', 'youtube']
+};
+
 export default function Portfolio() {
   const [category, setCategory] = useState('All');
   const [query, setQuery] = useState('');
   const [preview, setPreview] = useState(null);
   const { portfolio } = useSiteContent();
-  const categories = ['All', ...new Set(portfolio.map((item) => item.category))];
-  const filtered = useMemo(() => portfolio.filter((item) => (category === 'All' || item.category === category) && item.title.toLowerCase().includes(query.toLowerCase())), [category, portfolio, query]);
+  const filtered = useMemo(() => portfolio.filter((item) => {
+    const projectCategory = String(item.category || '').trim().toLowerCase();
+    const matchesCategory = category === 'All' || categoryAliases[category]?.includes(projectCategory);
+    return matchesCategory && String(item.title || '').toLowerCase().includes(query.toLowerCase());
+  }), [category, portfolio, query]);
 
   return (
     <>
