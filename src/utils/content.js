@@ -26,6 +26,21 @@ export const services = [
     ]
   },
   {
+    title: 'Logo Design',
+    slug: 'logo-design',
+    category: 'Branding',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80',
+    excerpt: 'Distinctive, memorable logo designs that establish a strong brand identity and leave a lasting impression.',
+    description: 'Nextec creates professional custom logos that reflect your brand’s personality, values, and vision. From concept development to final vector files, we design timeless logos that work seamlessly across digital and print media.',
+    deliverables: [
+      'Custom logo concepts',
+      'Brand mark & icon design',
+      'Typography & color selection',
+      'Vector source files (AI, SVG, EPS)',
+      'Logo usage guidelines'
+    ]
+  },
+  {
     title: 'Graphic Design',
     slug: 'graphic-design',
     category: 'Creative',
@@ -61,36 +76,36 @@ export const services = [
     description: 'We improve search visibility through site audits, structured data, keyword mapping, content briefs, technical fixes, and local SEO foundations.',
     deliverables: ['SEO audits', 'Keyword strategy', 'On-page SEO', 'Structured data', 'Local SEO']
   },
-{
-  title: 'Youtube Automation',
-  slug: 'Youtube Automation',
-  category: 'Marketing',
-  image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
-  excerpt: 'End-to-end YouTube automation services that help you build, grow, and monetize a professional channel.',
-  description: 'Nextec provides complete YouTube automation solutions including niche research, scriptwriting, voiceovers, video editing, thumbnail design, SEO optimization, and channel management to help creators and businesses scale effortlessly.',
-  deliverables: [
-    'Channel setup & branding',
-    'Content research & scripting',
-    'Professional video editing',
-    'Custom thumbnail design',
-    'YouTube SEO & publishing'
-  ]
-},
-{
-  title: '2D Animation',
-  slug: '2D Animation',
-  category: 'Creative',
-  image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80',
-  excerpt: 'High-quality 2D animated videos that simplify ideas and elevate your brand.',
-  description: 'We create engaging 2D animations for businesses, startups, educational platforms, and marketing campaigns. From concept development and storyboarding to character animation and motion graphics, we deliver visually compelling content that captures attention.',
-  deliverables: [
-    'Explainer videos',
-    'Motion graphics',
-    'Character animation',
-    'Storyboard & script',
-    'Logo animation & intros'
-  ]
-},
+  {
+    title: 'Youtube Automation',
+    slug: 'Youtube Automation',
+    category: 'Marketing',
+    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
+    excerpt: 'End-to-end YouTube automation services that help you build, grow, and monetize a professional channel.',
+    description: 'Nextec provides complete YouTube automation solutions including niche research, scriptwriting, voiceovers, video editing, thumbnail design, SEO optimization, and channel management to help creators and businesses scale effortlessly.',
+    deliverables: [
+      'Channel setup & branding',
+      'Content research & scripting',
+      'Professional video editing',
+      'Custom thumbnail design',
+      'YouTube SEO & publishing'
+    ]
+  },
+  {
+    title: '2D Animation',
+    slug: '2D Animation',
+    category: 'Creative',
+    image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80',
+    excerpt: 'High-quality 2D animated videos that simplify ideas and elevate your brand.',
+    description: 'We create engaging 2D animations for businesses, startups, educational platforms, and marketing campaigns. From concept development and storyboarding to character animation and motion graphics, we deliver visually compelling content that captures attention.',
+    deliverables: [
+      'Explainer videos',
+      'Motion graphics',
+      'Character animation',
+      'Storyboard & script',
+      'Logo animation & intros'
+    ]
+  },
   {
     title: 'Video Production',
     slug: 'video-production',
@@ -99,15 +114,6 @@ export const services = [
     excerpt: 'Editing, motion graphics, reels, explainers, and testimonial content for digital campaigns.',
     description: 'We produce conversion-minded video assets for websites, paid ads, social channels, launch campaigns, and internal communication.',
     deliverables: ['Video editing', 'Motion graphics', 'Short-form reels', 'Explainers', 'Testimonials']
-  },
-  {
-    title: 'Market Research',
-    slug: 'market-research',
-    category: 'Strategy',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80',
-    excerpt: 'Research that clarifies markets, audiences, competitors, positioning, and product opportunities.',
-    description: 'We combine desk research, competitor mapping, audience insights, and opportunity analysis into useful strategy documents.',
-    deliverables: ['Competitor analysis', 'Audience research', 'Market sizing', 'Positioning insights']
   },
   {
     title: 'App Development',
